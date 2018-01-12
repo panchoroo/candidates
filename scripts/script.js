@@ -51,13 +51,13 @@ voteApp.events = function () {
         const parentID = $(this).parent().attr('id');
         $('.modal').empty();
         $('.modal').append(`<div id=${parentID}>`
-            + `<h4>` + voteApp.candidates[parentID][0] + ' ' + voteApp.candidates[parentID][1] +
-            `</h4>`
-            + `<h5>` + voteApp.candidates[parentID][2] + ',' + voteApp.candidates[parentID][3]
-            + `</h5>`
+            + `<h2>` + voteApp.candidates[parentID][0] + ' ' + voteApp.candidates[parentID][1] +
+            `</h2>`
+            + `<h4>` + voteApp.candidates[parentID][2] + ',' + voteApp.candidates[parentID][3]
+            + `</h4>`
             + '<p>' + voteApp.candidates[parentID][4] + '</p>'
-            + `<button class=vote id=${parentID}>Vote now for this candidate</button>`
-            + `<button class=close>Close</button>`
+            + `<div class=modalButtons><button class=vote id=${parentID}>Vote for ${voteApp.candidates[parentID][0]}</button>`
+            + `<button class=close>Close</button> </div>`
             + '</div>');
         
         voteApp.events();
